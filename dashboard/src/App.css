@@ -1,27 +1,70 @@
+/* App.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Helvetica Neue', sans-serif;
+  background: #f5f5f5;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.header-section {
+  background: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
 .button-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 300px);
-    grid-template-rows: repeat(2, 300px);
-    gap: 10px; /* Adjust the gap as needed */
-    justify-content: center;
-    align-content: center;
-    height: 100vh; /* Make sure the container covers the full height of the viewport */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.middle-button {
+  flex: 1 0 0; /* Take up available space */
+  height: 20vw; /* Responsive height, adjust as needed */
+  background: #fa3333;
+  border: none;
+  border-radius: 15px;
+  color: #ffffff;
+  font-size: 1.5em;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.middle-button:hover {
+  background: #ed1414;
+}
+
+.footer-section {
+  height: 5vh;
+  background: #fa3333;
+  color: #fff;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding-right: 10px;
+  font-size: 20px;
+}
+
+/* Responsive Styles */
+@media (max-width: 767px) {
+  .button-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px; /* Adjust gap for smaller screens */
   }
-  
-  
 
   .middle-button {
-    height: 100%;
-    width: 100%;
-    background: #c70039;
-    border: none;
-    border-radius: 15px;
-    color: #ffffff;
-    font-size: 2em;
-    font-family: 'Helvetica Neue', sans-serif; /* Use your preferred modern font */
-    cursor: pointer;
+    height: 30vw; /* Adjust as needed for smaller screens */
   }
-  
-  .middle-button:hover {
-    background: #91052d;
-  }
+}
